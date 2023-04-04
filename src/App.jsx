@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../src/style/App.css';
 import Select from 'react-select';
 
 function App() {
+	const [activeLocation, setActiveLocation] = useState('AB');
+	const [lastUpdated, setlastUpdated] = useState('');
 	const locationList = [
 		{ value: 'AB', label: 'Alberta' },
 		{ value: 'BC', label: 'British Columbia' },
