@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import '../src/style/App.css';
 import Select from 'react-select';
+import Card from '../src/components/SumaryCard'
 
 function App() {
 	const [activeLocation, setActiveLocation] = useState('AB');
