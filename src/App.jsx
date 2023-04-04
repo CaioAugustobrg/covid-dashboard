@@ -27,6 +27,9 @@ function App() {
 		{ value: 'SK', label: 'Saskatchewan' },
 		{ value: 'YT', label: 'Yukon' },
 	];
+	useEffect(() => {
+		getVersion();
+	}, [activeLocation]);
 	return (
 		<div className="App">
 			<h1>COVID 19 Dashboard</h1>
