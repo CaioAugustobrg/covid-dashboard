@@ -5,6 +5,13 @@ import Select from 'react-select';
 function App() {
 	const [activeLocation, setActiveLocation] = useState('AB');
 	const [lastUpdated, setlastUpdated] = useState('');
+
+	const baseUrl = 'https://api.opencovid.ca';
+	const getVersion = async () => {
+		const res = await fetch(`${baseUrl}/version`);
+		const data = await res.json();
+		setlastUpdated(data.timeseries);
+	};
 	const locationList = [
 		{ value: 'AB', label: 'Alberta' },
 		{ value: 'BC', label: 'British Columbia' },
