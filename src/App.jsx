@@ -15,9 +15,20 @@ function App() {
 	};
 
 	const getSummaryData = async (location) => {
-    if (activeLocation === "canada") {
-        return;
+		if (activeLocation === 'canada') {
+			return;
 		}
+		let res = await fetch(`${baseUrl}/summary?loc=${activeLocation}`);
+		let resData = await res.json();
+		let summaryData = resData.data[0];
+		let formattedData = {};
+
+		Object.keys(summaryData).map(
+			(key) => (formattedData[key] = summaryData[key].toLocaleString())
+		);
+		console.log(formattedData);
+		setSummaryData(formattedData);
+	};
 	const locationList = [
 		{ value: 'AB', label: 'Alberta' },
 		{ value: 'BC', label: 'British Columbia' },
