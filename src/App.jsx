@@ -27,8 +27,14 @@ function App() {
 				<div className='dashboard-menu'>
 					<Select options={locationList}
 						className='dashboard-select'
+						onChange={(selectedOption) =>
+							setActiveLocation(selectedOption.value)
+						}
+						defaultValue={locationList.filter(
+							(options) => options.value === activeLocation
+						)}
 					/>
-					<p className='update-date'>Last update: </p>
+					<p className='update-date'>Last update: {lastUpdated}</p>
 				</div>
 				<div className='dashboard-sumary'></div>
 			</div>
