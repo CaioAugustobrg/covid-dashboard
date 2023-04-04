@@ -26,8 +26,7 @@ function App() {
 		Object.keys(summaryData).map(
 			(key) => (formattedData[key] = summaryData[key].toLocaleString())
 		);
-		console.log(formattedData);
-		setSummaryData(formattedData);
+
 	};
 	const locationList = [
 		{ value: 'AB', label: 'Alberta' },
