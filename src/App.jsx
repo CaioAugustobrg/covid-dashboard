@@ -13,6 +13,11 @@ function App() {
 		const data = await res.json();
 		setlastUpdated(data.timeseries);
 	};
+
+	const getSummaryData = async (location) => {
+    if (activeLocation === "canada") {
+        return;
+		}
 	const locationList = [
 		{ value: 'AB', label: 'Alberta' },
 		{ value: 'BC', label: 'British Columbia' },
