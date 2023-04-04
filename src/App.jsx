@@ -12,7 +12,7 @@ function App() {
 					<Select options={locationList}
 						className='dashboard-select'
 					/>
-         
+					<p className='update-date'>Last update: </p>
 				</div>
 				<div className='dashboard-sumary'></div>
 			</div>
